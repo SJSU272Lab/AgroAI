@@ -1,7 +1,7 @@
 # Fall16-Team20
-Testing access
 
-Project name : AgroAI
+
+#Project name : AgroAI#
 
 Problem: Every year crop yield suffers due to lack of knowledge on the soil being used and same old practices followed by farmers due which farmers may end up paying more for certain utilities such as irrigation, fertilizers. Farmers also do not have or know the effects of various factors such rainfall on crop yield and soil health.
 
@@ -12,6 +12,6 @@ Solution: We will use data analytics and machine learning models for determining
 Main focus would be generating accurate models and providing useful recommendations.
 
 
-
+![alt Architecture diagram]( /Project_AgroAI_docs/272_Project.png?raw=true "Architecture Diagram")
 
 
