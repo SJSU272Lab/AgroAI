@@ -19,6 +19,6 @@ setup(
     version='1.0.0',
     description='Hello World app for running Python apps on Bluemix',
     long_description=long_description,
-    url='https://github.com/SJSU272Lab/Fall16-Team20/tree/master/FlaskApp/AgroAI',
+    url='https://github.com/IBM-Bluemix/python-hello-world-flask',
     license='Apache-2.0'
 )
