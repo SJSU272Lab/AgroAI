@@ -10,6 +10,10 @@ app = Flask(__name__)
 def homepage():
     return render_template("homepage.html")
 
+@app.route('/home')
+def home():
+    return render_template("home.html")
+
 
 @app.route('/loadIt', methods=['POST'])
 def load_data():
