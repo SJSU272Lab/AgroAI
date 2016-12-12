@@ -184,14 +184,14 @@ agro.controller('controllerHome',function($scope,$log,$http,$state){
               yAxis: {
                   min: 0,
                   title: {
-                      text: 'Crop Yield (tons/crates)'
+                      text: 'Crop Yield (tons OR crates per hectre)'
                   }
               },
               legend: {
                   enabled: false
               },
               tooltip: {
-                  pointFormat: 'Crop suggestion for your soil type'
+                  pointFormat: 'Crop suggestion <b>{point.y:.3f} gallons</b>',
               },
               series: [{
                   name: 'Crop yield',
@@ -283,7 +283,7 @@ agro.controller('controllerHome',function($scope,$log,$http,$state){
               yAxis: {
                   min: 0,
                   title: {
-                      text: 'Crop Yield (tons/crates)'
+                      text: 'Crop Yield (tons OR crates per hectre)'
                   }
               },
               legend: {
@@ -474,13 +474,13 @@ agro.controller('controllerHome',function($scope,$log,$http,$state){
 
                         if (data) {
                             $scope.successMsg = true;
-                            $scope.state = "",
-                            $scope.county = "",,
-                            $scope.crop = "",
-                            $scope.yield = "",
-                            $scope.yieldUnit = "",
-                            $scope.irrigation  = "",
-                            $scope.irrigationArea = "",
+                            $scope.state = "";
+                            $scope.county = "";
+                            $scope.crop = "";
+                            $scope.yield = "";
+                            $scope.yieldUnit = "";
+                            $scope.irrigation  = "";
+                            $scope.irrigationArea = "";
                             $scope.irrigationFrequency = "";
                             alert("Thank you for your input. Your data is submitted successfully");
                           }
