@@ -8,7 +8,7 @@ from Machines import model1
 from Machines import model2
 from Machines import model3
 from Machines import model4
-
+from Machines import userdata
 # Emit Bluemix deployment event
 cf_deployment_tracker.track()
 
@@ -70,6 +70,13 @@ def predict_windbreak():
     countyname = request_data['countyname']
 
     response = model4.model4(inputCounty=countyname)
+    return 1
+
+@app.route('/userdata', methods=['POST'])
+def get_user_data():
+    request_data = request.json
+
+    response = userdata.import_userdata(request_data)
     return response
 
 
