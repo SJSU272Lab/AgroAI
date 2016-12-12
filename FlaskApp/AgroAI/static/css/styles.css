@@ -522,3 +522,32 @@ img::-moz-selection {
     color: #fff;
     background: 0 0;
 }
+
+
+.modal-overlay {
+    position: absolute;
+    top: 0;
+    left:0;
+    bottom: 0;
+    width: 100%;
+    background: $bg;
+    color: #fff;
+    opacity: 0;
+    h2 {
+    margin-top: 20%;
+    font-family: 'Droid Serif', serif;
+        & span {
+            font-family: 'Droid Sans', sans-serif;
+            font-weight: 700;
+        }
+    }
+}
+&:hover {
+    .overlay {
+        opacity: 1;
+    }
+    img {
+        -webkit-filter:blur(2px);
+        filter: blur(2px);
+    }
+}

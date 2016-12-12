@@ -1,5 +1,9 @@
+
 <script src='https://www.google.com/recaptcha/api.js'></script>
+
 <div ng-controller="controllerHome">
+
+    <script src='https://www.google.com/recaptcha/api.js'></script>
 
     <nav id="topNav" class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
@@ -40,160 +44,19 @@
     </nav>
 
 
-
-    <!-- ==== ABOUT ==== -->
-    <div class="container" id="about" name="about">
-      <div class="row white">
-      <br>
-        <h1 class="centered">A LITTLE ABOUT OUR AGENCY</h1>
-        <hr>
-
-        <div class="col-lg-6">
-          <p>Description here</p>
-        </div><!-- col-lg-6 -->
-
-        <div class="col-lg-6">
-          <p>Description here</p>
-        </div><!-- col-lg-6 -->
-      </div><!-- row -->
-    </div><!-- container -->
-
     <!-- ==== SECTION DIVIDER1 -->
     <section class="section-divider textdivider divider1">
       <div class="container">
         <form class="form-horizontal" role="form">
           <div class="form-group">
-            <label for="inputEmail1" class="col-lg-4 control-label"></label>
-            <div class="col-lg-10">
-                <div class="col-lg-8">
-                  <select class="form-control" placeholder="Select an option">
-                      <option> </option>
-                      <option> 1 </option>
-                      <option> 2 </option>
-                  </select>
-                </div>
-                <div class="col-lg-4">
-                    <button class="btn btn-success btn-lg" type="Submit"> Search </button>
-                </div>
-            </div>
+              <h3> A little about our company </h3>
           </div>
          </form><!-- form -->
         <hr>
-        <p>Pie chart area</p>
-      </div><!-- container -->
-    </section><!-- section -->
-
-
-    <!-- ==== SERVICES ==== -->
-    <div class="container" id="services" name="services">
-      <br>
-      <br>
-      <div class="row">
-        <h2 class="centered">Second option area.</h2>
-        <hr>
-        <br>
-        <div class="col-lg-offset-2 col-lg-8">
-          <p>Second area charts section</p>
-        </div><!-- col-lg -->
-      </div><!-- row -->
-
-      <div class="row">
-        <h2 class="centered">MOBILE FIRST THINKING, ALWAYS.</h2>
-        <hr>
-        <br>
-        <div class="col-lg-offset-2 col-lg-8">
-          <img class="img-responsive" src="{{ url_for('static', filename='img/iphone.png')}}" alt="">
-        </div><!-- col -->
-      </div><!-- row -->
-    </div><!-- container -->
-
-
-    <!-- ==== SECTION DIVIDER2 -->
-    <section class="section-divider textdivider divider2">
-      <div class="container">
-        <h1>Chart area.</h1>
-        <hr>
         <p></p>
       </div><!-- container -->
     </section><!-- section -->
 
-    <!-- ==== TEAM MEMBERS ==== -->
-    <div class="container" id="team" name="team">
-    <br>
-      <div class="row white centered">
-        <h1 class="centered">MEET OUR AWESOME TEAM</h1>
-        <hr>
-        <br>
-        <br>
-        <div class="col-lg-3 centered">
-          <img class="img img-circle" src="{{ url_for('static', filename='img/team/team01.jpg')}}" height="120px" width="120px" alt="">
-          <br>
-          <h4><b>Ajay Tanpure</b></h4>
-          <a href="#" class="icon icon-twitter"></a>
-          <a href="#" class="icon icon-facebook"></a>
-          <a href="#" class="icon icon-flickr"></a>
-          <p>Ajay combines an expert technical knowledge with a real eye for design. Working with clients from a wide range of industries, he fully understands client objectives when working on a project, large or small.</p>
-        </div><!-- col-lg-3 -->
-
-        <div class="col-lg-3 centered">
-          <img class="img img-circle" src="{{ url_for('static', filename='img/team/team02.jpg')}}" height="120px" width="120px" alt="">
-          <br>
-          <h4><b>Niranjan Tungatkar</b></h4>
-          <a href="#" class="icon icon-twitter"></a>
-          <a href="#" class="icon icon-facebook"></a>
-          <a href="#" class="icon icon-flickr"></a>
-          <p>Niranjan is an experienced marcoms practitioner and manages projects from inception to delivery. He understands the synergy between great design and commercial effectiveness which shines through on every project.</p>
-        </div><!-- col-lg-3 -->
-
-        <div class="col-lg-3 centered">
-          <img class="img img-circle" src="{{ url_for('static', filename='img/team/team03.jpg')}}" height="120px" width="120px" alt="">
-          <br>
-          <h4><b>Rohan Kankapurkar</b></h4>
-          <a href="#" class="icon icon-twitter"></a>
-          <a href="#" class="icon icon-facebook"></a>
-          <a href="#" class="icon icon-flickr"></a>
-          <p>Be a creative director is a hard task, but Michele loves what she does. Her combination of knowledge and expertise is an important pillar in our agency.</p>
-        </div><!-- col-lg-3 -->
-
-        <div class="col-lg-3 centered">
-          <img class="img img-circle" src="{{ url_for('static', filename='img/team/team04.jpg')}}" height="120px" width="120px" alt="">
-          <br>
-          <h4><b>Darshan Sapaliga</b></h4>
-          <a href="#" class="icon icon-twitter"></a>
-          <a href="#" class="icon icon-facebook"></a>
-          <a href="#" class="icon icon-flickr"></a>
-          <p>Darshan began making websites when animated logos and scrolling text were cool, but has since found a love for simplicity, creating websites that are a pleasure to browse. Monkey Island Fan.</p>
-        </div><!-- col-lg-3 -->
-
-      </div><!-- row -->
-    </div><!-- container -->
-
-    <!-- ==== GREYWRAP ==== -->
-    <div id="greywrap">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 centered">
-            <img class="img-responsive" src="{{ url_for('static', filename='img/macbook.png')}}" align="">
-          </div>
-          <div class="col-lg-4">
-            <h2>Third chart area</h2>
-            <p></p>
-            <p><a class="btn btn-success">Search</a></p>
-          </div>
-        </div><!-- row -->
-      </div>
-      <br>
-      <br>
-    </div><!-- greywrap -->
-
-    <!-- ==== SECTION DIVIDER3 -->
-    <section class="section-divider textdivider divider3">
-      <div class="container">
-        <h1>Fourth chart area</h1>
-        <hr>
-        <p></p>
-      </div><!-- container -->
-    </section><!-- section -->
 
     <!-- ==== PORTFOLIO ==== -->
     <div class="container" id="portfolio" name="portfolio">
@@ -206,173 +69,146 @@
         <br>
       </div><!-- /row -->
       <div class="container">
-      <div class="row">
+          <div class="row">
 
-        <!-- PORTFOLIO IMAGE 1 -->
-        <div class="col-md-4 ">
-            <div class="grid mask">
-            <figure>
-              <img class="img-responsive" src="{{ url_for('static', filename='img/portfolio/folio01.jpg')}}" alt="">
-              <figcaption>
-                <h5>DASHBOARD</h5>
-                <a data-toggle="modal" href="#myModal" class="btn btn-primary btn-lg">Take a Look</a>
-              </figcaption><!-- /figcaption -->
-            </figure><!-- /figure -->
-            </div><!-- /grid-mask -->
-        </div><!-- /col -->
-
-
-             <!-- MODAL SHOW THE PORTFOLIO IMAGE. In this demo, all links point to this modal. You should create
-                  a modal for each of your projects. -->
-
-              <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                      <h4 class="modal-title">Project Title</h4>
-                    </div>
-                    <div class="modal-body">
-                      <p><img class="img-responsive" src="{{ url_for('static', filename='img/portfolio/folio01.jpg')}}" alt=""></p>
-                      <p>This project was crafted for Some Name corp. Detail here a little about your job requirements and the tools used. Tell about the challenges faced and what you and your team did to solve it.</p>
-                      <p><b><a href="#">Visit Site</a></b></p>
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    </div>
-                  </div><!-- /.modal-content -->
-                </div><!-- /.modal-dialog -->
-              </div><!-- /.modal -->
+            <!-- PORTFOLIO IMAGE 1 -->
+            <div class="col-md-4 " style="height: 800px; max-height: 800px;">
+                <div class="grid mask" style="height: 100%">
+                <figure>
+                  <img class="img-responsive" src="{{ url_for('static', filename='images/irrigation.jpg')}}" alt="" style="height: 100%; :hover: blur(5px);">
+                  <figcaption>
+                    <h5>IRRIGATION</h5>
+                    <a data-toggle="modal" href="#myModal" class="btn btn-primary btn-lg">Take a Look</a>
+                  </figcaption><!-- /figcaption -->
+                </figure><!-- /figure -->
+                </div><!-- /grid-mask -->
+            </div><!-- /col -->
 
 
-        <!-- PORTFOLIO IMAGE 2 -->
-        <div class="col-md-4">
-            <div class="grid mask">
-            <figure>
-              <img class="img-responsive" src="{{ url_for('static', filename='img/portfolio/folio02.jpg')}}" alt="">
-              <figcaption>
-                <h5>UI DESIGN</h5>
-                <a data-toggle="modal" href="#myModal" class="btn btn-primary btn-lg">Take a Look</a>
-              </figcaption><!-- /figcaption -->
-            </figure><!-- /figure -->
-            </div><!-- /grid-mask -->
-        </div><!-- /col -->
+                 <!-- MODAL SHOW THE PORTFOLIO IMAGE. In this demo, all links point to this modal. You should create
+                      a modal for each of your projects. -->
 
-        <!-- PORTFOLIO IMAGE 3 -->
-        <div class="col-md-4">
-            <div class="grid mask">
-            <figure>
-              <img class="img-responsive" src="{{ url_for('static', filename='img/portfolio/folio03.jpg')}}" alt="">
-              <figcaption>
-                <h5>ANDROID PAGE</h5>
-                <a data-toggle="modal" href="#myModal" class="btn btn-primary btn-lg">Take a Look</a>
-              </figcaption><!-- /figcaption -->
-            </figure><!-- /figure -->
-            </div><!-- /grid-mask -->
-        </div><!-- /col -->
-      </div><!-- /row -->
+                  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                          <h4 class="modal-title">IRRIGATION</h4>
+                        </div>
+                        <div class="modal-body">
+                          <div>
+                              <!-- <div class="row"> -->
+                                  <div class="col-md-9">
+                                      <select class="form-control" ng-mode="countyname" placeholder="" style="background-color: inherit !important; color: white;">
+                                          <option></option>
+                                          <option>Maricopa County, Arizona, Central Part</option>
+                                          <option>Fort Defiance Area, Parts of Apache and Navajo Counties, Arizona and McKinley and San Juan Counties, New Mexico</option>
+                                          <option>Santa Clara Area, California, Western Part</option>
+                                          <option>Western Riverside Area, California</option>
+                                          <option>Cherokee County, Texas</option>
+                                          <option>Duval County, Texas</option>
+                                      </select>
+                                      <select class="form-control" ng-mode="typeofplant" style="background-color: inherit !important; color: white;">
+                                          <option></option>
+                                          <option>lawn</option>
+                                          <option>shrubs</option>
+                                      </select>
+                                  </div>
+                                  <div class="col-md-3">
+                                      <button class="btn btn-success" ng-click="getIrrigation()">Get Results</button>
+                                  </div>
+                              <!-- </div> -->
+                            <br />
+                          </div>
+                          <div>
+                              <h2> For chart </h2>
+                          </div>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                      </div><!-- /.modal-content -->
+                    </div><!-- /.modal-dialog -->
+                  </div><!-- /.modal -->
 
-        <!-- PORTFOLIO IMAGE 4 -->
-      <div class="row">
-        <div class="col-md-4 ">
-            <div class="grid mask">
-            <figure>
-              <img class="img-responsive" src="{{ url_for('static', filename='img/portfolio/folio04.jpg')}}" alt="">
-              <figcaption>
-                <h5>PROFILE</h5>
-                <a data-toggle="modal" href="#myModal" class="btn btn-primary btn-lg">Take a Look</a>
-              </figcaption><!-- /figcaption -->
-            </figure><!-- /figure -->
-            </div><!-- /grid-mask -->
-        </div><!-- /col -->
 
-        <!-- PORTFOLIO IMAGE 5 -->
-        <div class="col-md-4">
-            <div class="grid mask">
-            <figure>
-              <img class="img-responsive" src="{{ url_for('static', filename='img/portfolio/folio05.jpg')}}" alt="">
-              <figcaption>
-                <h5>TWITTER STATUS</h5>
-                <a data-toggle="modal" href="#myModal" class="btn btn-primary btn-lg">Take a Look</a>
-              </figcaption><!-- /figcaption -->
-            </figure><!-- /figure -->
-            </div><!-- /grid-mask -->
-        </div><!-- /col -->
+            <!-- PORTFOLIO IMAGE 2 -->
+            <div class="col-md-4">
+                <div class="grid mask">
+                <figure>
+                  <img class="img-responsive" src="{{ url_for('static', filename='img/portfolio/folio02.jpg')}}" alt="">
+                  <figcaption>
+                    <h5>UI DESIGN</h5>
+                    <a data-toggle="modal" href="#myModal" class="btn btn-primary btn-lg">Take a Look</a>
+                  </figcaption><!-- /figcaption -->
+                </figure><!-- /figure -->
+                </div><!-- /grid-mask -->
+            </div><!-- /col -->
 
-        <!-- PORTFOLIO IMAGE 6 -->
-        <div class="col-md-4">
-            <div class="grid mask">
-            <figure>
-              <img class="img-responsive" src="{{ url_for('static', filename='img/portfolio/folio06.jpg')}}" alt="">
-              <figcaption>
-                <h5>PHONE MOCKUP</h5>
-                <a data-toggle="modal" href="#myModal" class="btn btn-primary btn-lg">Take a Look</a>
-              </figcaption><!-- /figcaption -->
-            </figure><!-- /figure -->
-            </div><!-- /grid-mask -->
-        </div><!-- /col -->
+                <!-- MODAL SHOW THE PORTFOLIO IMAGE. In this demo, all links point to this modal. You should create
+                     a modal for each of your projects. -->
+
+                 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                   <div class="modal-dialog">
+                     <div class="modal-content">
+                       <div class="modal-header">
+                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                         <h4 class="modal-title">Project Title</h4>
+                       </div>
+                       <div class="modal-body">
+                         <p><img class="img-responsive" src="{{ url_for('static', filename='img/portfolio/folio01.jpg')}}" alt=""></p>
+                         <p>This project was crafted for Some Name corp. Detail here a little about your job requirements and the tools used. Tell about the challenges faced and what you and your team did to solve it.</p>
+                         <p><b><a href="#">Visit Site</a></b></p>
+                       </div>
+                       <div class="modal-footer">
+                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                       </div>
+                     </div><!-- /.modal-content -->
+                   </div><!-- /.modal-dialog -->
+                 </div><!-- /.modal -->
+
+            <!-- PORTFOLIO IMAGE 3 -->
+            <div class="col-md-4">
+                <div class="grid mask">
+                <figure>
+                  <img class="img-responsive" src="{{ url_for('static', filename='img/portfolio/folio03.jpg')}}" alt="">
+                  <figcaption>
+                    <h5>ANDROID PAGE</h5>
+                    <a data-toggle="modal" href="#myModal" class="btn btn-primary btn-lg">Take a Look</a>
+                  </figcaption><!-- /figcaption -->
+                </figure><!-- /figure -->
+                </div><!-- /grid-mask -->
+            </div><!-- /col -->
+          </div><!-- /row -->
+
+          <!-- MODAL SHOW THE PORTFOLIO IMAGE. In this demo, all links point to this modal. You should create
+               a modal for each of your projects. -->
+
+           <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+             <div class="modal-dialog">
+               <div class="modal-content">
+                 <div class="modal-header">
+                   <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                   <h4 class="modal-title">Project Title</h4>
+                 </div>
+                 <div class="modal-body">
+                   <p><img class="img-responsive" src="{{ url_for('static', filename='img/portfolio/folio01.jpg')}}" alt=""></p>
+                   <p>This project was crafted for Some Name corp. Detail here a little about your job requirements and the tools used. Tell about the challenges faced and what you and your team did to solve it.</p>
+                   <p><b><a href="#">Visit Site</a></b></p>
+                 </div>
+                 <div class="modal-footer">
+                   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                 </div>
+               </div><!-- /.modal-content -->
+             </div><!-- /.modal-dialog -->
+           </div><!-- /.modal -->
+
       </div><!-- /row -->
       <br>
       <br>
     </div><!-- /row -->
     </div><!-- /container -->
 
-    <!-- ==== SECTION DIVIDER4 ==== -->
-    <section class="section-divider textdivider divider4">
-      <div class="container">
-        <h1>Chart area</h1>
-        <hr>
-        <p></p>
-      </div><!-- container -->
-    </section><!-- section -->
-
-    <!-- ==== BLOG ==== -->
-    <div class="container" id="blog" name="blog">
-    <br>
-      <div class="row">
-        <br>
-        <h1 class="centered">Definition area.</h1>
-        <hr>
-        <br>
-        <br>
-      </div><!-- /row -->
-
-      <div class="row">
-        <div class="col-lg-6 blog-bg">
-          <div class="col-lg-4 centered">
-          <br>
-            <p><img class="img img-circle" src="{{ url_for('static', filename='img/team/team04.jpg')}}" width="60px" height="60px"></p>
-            <h4></h4>
-            <h5></h5>
-          </div>
-          <div class="col-lg-8 blog-content">
-            <h2>Part one</h2>
-            <p>Armed with insight, we embark on designing the right brand experience that engages the audience. It encompasses both the strategic direction and creative execution that solves a business problem and brings the brand to life.</p>
-            <p>In the create phase, the big idea is unleashed to the world through different media touchpoints. This is when we watch the audience fall in love all over again with our client’s brand.</p>
-            <p><a href="#" class="icon icon-link"> Read More</a></p>
-            <br>
-          </div>
-        </div><!-- /col -->
-
-        <div class="col-lg-6 blog-bg">
-          <div class="col-lg-4 centered">
-          <br>
-            <p><img class="img img-circle" src="{{ url_for('static', filename='img/team/team03.jpg')}}" width="60px" height="60px"></p>
-            <h4></h4>
-            <h5></h5>
-          </div>
-          <div class="col-lg-8 blog-content">
-            <h2>Part 2</h2>
-            <p>Armed with insight, we embark on designing the right brand experience that engages the audience. It encompasses both the strategic direction and creative execution that solves a business problem and brings the brand to life.</p>
-            <p>In the create phase, the big idea is unleashed to the world through different media touchpoints. This is when we watch the audience fall in love all over again with our client’s brand.</p>
-            <p><a href="#" class="icon icon-link"> Read More</a></p>
-            <br>
-          </div>
-        </div><!-- /col -->
-      </div><!-- /row -->
-      <br>
-      <br>
-    </div><!-- /container -->
 
 
     <!-- ==== SECTION DIVIDER6 ==== -->
@@ -390,17 +226,11 @@
       <div class="row">
       <br>
         <h1 class="centered">GIVE US FEEDBACK FROM YOUR SIDE</h1>
-        <hr>
         <br>
         <br>
         <div class="col-lg-4">
-          <h3>General Information</h3>
-          <p><span class="icon icon-home"></span> Some Address 987, NY<br/>
-            <span class="icon icon-phone"></span> <br/>
-            <span class="icon icon-mobile"></span><br/>
-            <span class="icon icon-envelop"></span> <a href="#"> </a> <br/>
-            <span class="icon icon-twitter"></span> <a href="#">  </a> <br/>
-            <span class="icon icon-facebook"></span> <a href="#">  </a> <br/>
+          <h3></h3>
+          <p>
           </p>
         </div><!-- col -->
 
@@ -421,6 +251,15 @@
                   <input type="text" class="form-control" id="text1" placeholder="Your Name">
                 </div>
               </div>
+
+              <!-- captcha area -->
+              <div class="form-group">
+                <div class="col-lg-10">
+                  <h1> hi </h1>
+                  <div class="g-recaptcha" data-sitekey="6LfGeg4UAAAAAFKL2WJO3cvDraPlSi-tEVbSOyGE"></div>
+                </div>
+              </div>
+
               <div class="form-group">
                 <div class="col-lg-10">
                   <button type="submit" class="btn btn-success">Sign in</button>
@@ -431,4 +270,50 @@
              </form><!-- form -->
           </p>
         </div><!-- col -->
+      </div>
+    </div>
+
+
+        <!-- ==== TEAM MEMBERS ==== -->
+    <div id="greywrap">
+        <div class="container"  name="team">
+        <br>
+          <div class="row white centered">
+            <h1 class="centered">MEET OUR AWESOME TEAM</h1>
+            <hr>
+            <br>
+            <br>
+            <div class="col-lg-3 centered">
+              <img class="img img-circle" src="{{ url_for('static', filename='img/team/team01.jpg')}}" height="120px" width="120px" alt="">
+              <br>
+              <h4><b>Ajay Tanpure</b></h4>
+              <p style="color: black;">Ajay combines an expert technical knowledge with a real eye for design. Working with clients from a wide range of industries, he fully understands client objectives when working on a project, large or small.</p>
+            </div><!-- col-lg-3 -->
+
+            <div class="col-lg-3 centered">
+              <img class="img img-circle" src="{{ url_for('static', filename='img/team/team02.jpg')}}" height="120px" width="120px" alt="">
+              <br>
+              <h4><b>Niranjan Tungatkar</b></h4>
+              <p style="color: black;">Niranjan is an experienced marcoms practitioner and manages projects from inception to delivery. He understands the synergy between great design and commercial effectiveness which shines through on every project.</p>
+            </div><!-- col-lg-3 -->
+
+            <div class="col-lg-3 centered">
+              <img class="img img-circle" src="{{ url_for('static', filename='img/team/team03.jpg')}}" height="120px" width="120px" alt="">
+              <br>
+              <h4><b>Rohan Kankapurkar</b></h4>
+              <p style="color: black;">Be a creative director is a hard task, but Michele loves what she does. Her combination of knowledge and expertise is an important pillar in our agency.</p>
+            </div><!-- col-lg-3 -->
+
+            <div class="col-lg-3 centered">
+              <img class="img img-circle" src="{{ url_for('static', filename='img/team/team04.jpg')}}" height="120px" width="120px" alt="">
+              <br>
+              <h4><b>Darshan Sapaliga</b></h4>
+              <p style="color: black;">Darshan began making websites when animated logos and scrolling text were cool, but has since found a love for simplicity, creating websites that are a pleasure to browse. Monkey Island Fan.</p>
+            </div><!-- col-lg-3 -->
+
+          </div><!-- row -->
+        </div><!-- container -->
+      </div>
+
+
 </div>
