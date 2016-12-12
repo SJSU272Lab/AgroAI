@@ -6,6 +6,8 @@ from flask import request
 import os
 from Machines import model1
 from Machines import model2
+from Machines import model3
+from Machines import model4
 
 # Emit Bluemix deployment event
 cf_deployment_tracker.track()
@@ -47,6 +49,28 @@ def predict_crop():
 
     response = model2.model2(inputCounty=countyname, area=area)
     return  response
+
+
+@app.route('/model3', methods=['POST'])
+def predict_crop_nonirr():
+
+    request_data = request.json
+    print request_data
+    countyname = request_data['countyname']
+    area = request_data['area']
+
+    response = model3.model3(inputCounty=countyname, area=area)
+    return response
+
+@app.route('/model4', methods=['POST'])
+def predict_windbreak():
+
+    request_data = request.json
+    print request_data
+    countyname = request_data['countyname']
+
+    response = model4.model4(inputCounty=countyname)
+    return response
 
 
 if __name__ == '__main__':

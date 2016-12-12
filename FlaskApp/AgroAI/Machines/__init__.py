@@ -1,1 +1,1 @@
-__all__ = ['model1', 'model2']
+__all__ = ['model1', 'model2', 'model3', 'model4']
