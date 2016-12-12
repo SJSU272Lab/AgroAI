@@ -14,7 +14,7 @@ agro.controller('controllerHome',function($scope,$log,$http,$state){
 
         $http({
     			method : "POST",
-    			url : '/modal1',
+    			url : '/model1',
           data: {
             countyname: $scope.countyname,
             typeofplant: $scope.typeofplant
@@ -37,7 +37,7 @@ agro.controller('controllerHome',function($scope,$log,$http,$state){
 
         $http({
           method : "POST",
-          url : '/modal2',
+          url : '/model2',
           data: {
             countyname: $scope.countyname,
             area: $scope.area
