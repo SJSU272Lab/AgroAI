@@ -77,7 +77,7 @@ def model1(countyname="", typeOfPlant=""):
     novrunoff = {"Negligible": 0, "Very low": 0, "Low": 0, "Medium": 0, "High": 0, "Very high": 0}
     decrunoff = {"Negligible": 0, "Very low": 0, "Low": 0, "Medium": 0, "High": 0, "Very high": 0}
 
-    with open(os.path.dirname( __file__) + './Data/irrigation.csv') as fp:
+    with open(os.path.dirname( __file__) + '/Data/irrigation.csv') as fp:
         reader = csv.DictReader(fp)
         for row in reader:
             if countyname == "":

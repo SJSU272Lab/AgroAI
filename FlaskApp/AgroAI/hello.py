@@ -85,7 +85,7 @@ def predict_windbreak():
     countyname = request_data['countyname']
 
     response = model4.model4(inputCounty=countyname)
-    return 1
+    return response
 
 @app.route('/userdata', methods=['POST'])
 def get_user_data():
