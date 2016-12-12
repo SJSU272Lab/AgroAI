@@ -1,7 +1,7 @@
 ---
 applications:
-- name: hello-world-flask
-  host: hello-world-flask-${random-word}
-  memory: 128M
+- name: AgroAI
+  host: AgroAIcorp
+  memory: 256M
   instances: 1
   path: .

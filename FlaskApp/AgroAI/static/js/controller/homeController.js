@@ -372,36 +372,96 @@ agro.controller('controllerHome',function($scope,$log,$http,$state){
                     $scope.irrigationFrequency
                   );
 
-        $http({
-          method : "POST",
-          url : '/submitData',
-          data: {
-            state: $scope.state,
-            county: $scope.county,
-            crop: $scope.crop,
-            yield: $scope.yield,
-            yieldUnit: $scope.yieldUnit,
-            irrigation: $scope.irrigation,
-            irrigationArea: $scope.irrigationArea,
-            irrigationFrequency: $scope.irrigationFrequency
-          }
-        }).success(function(data) {
+	    var captchaResponse = grecaptcha.getResponse();
+	    if(captchaResponse != "" && captchaResponse != undefined && captchaResponse != null)
+        {
+            $http({
+			    method : "POST",
+			    url : 'https://www.google.com/recaptcha/api/siteverify',
+			    data : {
+				    "secret" : "6LcRjQ4UAAAAAI0AssSLOG_ee9tZeLMO6rVA-CBc",
+                    "response" : captchaResponse
 
-          console.log("-----soilErrosionPrevention-----");
-          console.log(data);
+			    }
+            }).success(function(data) {
 
-          if(data == true)
-              $scope.successMsg = true;
-          else
-              $scope.submitDataError = true;
+                if(data.success == true) {
+                    $http({
+                        method: "POST",
+                        url: '/userdata',
+                        data: {
+                            state: $scope.state,
+                            county: $scope.county,
+                            crop: $scope.crop,
+                            yield: $scope.yield,
+                            yieldUnit: $scope.yieldUnit,
+                            irrigation: $scope.irrigation,
+                            irrigationArea: $scope.irrigationArea,
+                            irrigationFrequency: $scope.irrigationFrequency
+                        }
+                    }).success(function (data) {
+
+                        console.log("-----soilErrosionPrevention-----");
+                        console.log(data);
+
+                        if (data == true)
+                            $scope.successMsg = true;
+                        else
+                            $scope.submitDataError = true;
 
 
-        }).error(function(error) {
-          console.log("Internal Server error occurred");
-          $scope.submitDataError = true;
-        });
+                    }).error(function (error) {
+                        console.log("Internal Server error occurred");
+                        $scope.submitDataError = true;
+                    });
+                }else{
+
+                }
+
+                console.log(data.success);
+    		}).error(function(error) {
+			    console.log("Error")
+
+		    });
+
+        }
+
+
+
+
+
+
+
+
+
 
     };
+
+
+    // $scope.submit = function() {
+    //
+	 //    var captchaResponse = grecaptcha.getResponse();
+	 //    if(captchaResponse != "" && captchaResponse != undefined && captchaResponse != null)
+    //     {
+    //         $http({
+		// 	    method : "POST",
+		// 	    url : 'https://www.google.com/recaptcha/api/siteverify',
+		// 	    data : {
+		// 		    "secret" : "6LcRjQ4UAAAAAI0AssSLOG_ee9tZeLMO6rVA-CBc",
+    //                 "response" : captchaResponse
+    //
+		// 	    }
+    //         }).success(function(data) {
+    //             console.log(data.success);
+    // 		}).error(function(error) {
+		// 	    console.log("Error")
+    //
+		//     });
+    //
+    //     }
+    // }
+
+
 
 
 })

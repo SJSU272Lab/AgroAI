@@ -1,6 +1,9 @@
+
+
+
 """Cloud Foundry test"""
 from flask import Flask
-import cf_deployment_tracker
+#import cf_deployment_tracker
 from flask import render_template
 from flask import request
 import os
@@ -10,7 +13,7 @@ from Machines import model3
 from Machines import model4
 from Machines import userdata
 # Emit Bluemix deployment event
-cf_deployment_tracker.track()
+#cf_deployment_tracker.track()
 
 app = Flask(__name__)
 
@@ -26,6 +29,18 @@ def homepage():
 @app.route('/home')
 def home():
     return render_template("home.html")
+
+
+@app.route('/loadIt', methods=['POST'])
+def load_data():
+    print("I am here")
+    request_data = request.form
+    print(request_data)
+    return "You finally got here"
+
+
+
+
 
 
 @app.route('/model1', methods=['POST'])
@@ -82,3 +97,4 @@ def get_user_data():
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=port)
+

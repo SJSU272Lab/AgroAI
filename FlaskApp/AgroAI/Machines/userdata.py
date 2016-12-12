@@ -25,3 +25,5 @@ def import_userdata(jsonstr):
         # Here exception  occured for some reason as file already is use by other user,
         # then try again to write into the file.
         write_to_csv(jsonstr=jsonstr)
+
+    return "Stored your data succussfully"
