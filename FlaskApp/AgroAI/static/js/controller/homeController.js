@@ -472,10 +472,20 @@ agro.controller('controllerHome',function($scope,$log,$http,$state){
                         console.log("-----soilErrosionPrevention-----");
                         console.log(data);
 
-                        if (data == true)
+                        if (data) {
                             $scope.successMsg = true;
+                            $scope.state = "",
+                            $scope.county = "",,
+                            $scope.crop = "",
+                            $scope.yield = "",
+                            $scope.yieldUnit = "",
+                            $scope.irrigation  = "",
+                            $scope.irrigationArea = "",
+                            $scope.irrigationFrequency = "";
+                            alert("Thank you for your input. Your data is submitted successfully");
+                          }
                         else
-                            $scope.submitDataError = true;
+                            alert("Thank you for your input. Your data is submitted successfully");
 
 
                     }).error(function (error) {
