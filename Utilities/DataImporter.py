@@ -44,6 +44,44 @@ def test_join(filename, cur):
         csv_writer.writerow([i[0] for i in cur.description])  # write headers
         csv_writer.writerows(rows)
 
+def create_crops(filename, cur):
+    SQL = 'SELECT legend.areaname, mucropyld.cropname, SUM(mucropyld.irryield_r) FROM ' \
+          '(legend INNER JOIN mapunit ON legend.lkey = mapunit.lkey) INNER JOIN ' \
+          'mucropyld ON mapunit.mukey = mucropyld.mukey GROUP BY legend.areaname, mucropyld.cropname'
+
+    rows = cur.execute(SQL).fetchall()
+
+    with open(filename, "a") as csv_file:  # Python 2 version
+        csv_writer = csv.writer(csv_file)
+        csv_writer.writerow([i[0] for i in cur.description])  # write headers
+        csv_writer.writerows(rows)
+
+
+def creat_non_crops(filename, cur):
+    SQL = 'SELECT legend.areaname, mucropyld.cropname, SUM(mucropyld.nonirryield_r) FROM ' \
+          '(legend INNER JOIN mapunit ON legend.lkey = mapunit.lkey) INNER JOIN ' \
+          'mucropyld ON mapunit.mukey = mucropyld.mukey GROUP BY legend.areaname, mucropyld.cropname'
+
+    rows = cur.execute(SQL).fetchall()
+
+    with open(filename, "a") as csv_file:  # Python 2 version
+        csv_writer = csv.writer(csv_file)
+        csv_writer.writerow([i[0] for i in cur.description])  # write headers
+        csv_writer.writerows(rows)
+
+
+def create_windbreak(filename, cur):
+    SQL = 'SELECT legend.areaname, copwindbreak.plantcomname, AVG(copwindbreak.wndbrkht_r) FROM ' \
+          '((legend INNER JOIN mapunit ON legend.lkey = mapunit.lkey) INNER JOIN component ON mapunit.mukey = component.mukey) ' \
+          'INNER JOIN copwindbreak ON component.cokey = copwindbreak.cokey GROUP BY legend.areaname,  copwindbreak.plantcomname'
+
+    rows = cur.execute(SQL).fetchall()
+
+    with open(filename, "a") as csv_file:  # Python 2 version
+        csv_writer = csv.writer(csv_file)
+        csv_writer.writerow([i[0] for i in cur.description])  # write headers
+        csv_writer.writerows(rows)
+
 
 def generate_csv(directory):
     csv_dir = "F:\\272\\data\\csvs"
@@ -69,9 +107,21 @@ def generate_csv(directory):
     csv_file = os.path.join(csv_dir, output)
     test_join(csv_file, cur)
 
+    #crop yield
+    prefix = directory.split("\\")[-1]
+    output = "crops.csv"
+    csv_file = os.path.join(csv_dir, output)
+    create_crops(csv_file, cur)
 
+    prefix = directory.split("\\")[-1]
+    output = "crops_nonirr.csv"
+    csv_file = os.path.join(csv_dir, output)
+    create_crops(csv_file, cur)
 
-
+    prefix =directory.split("\\")[-1]
+    output = "windbreak.csv"
+    csv_file = os.path.join(csv_dir, output)
+    create_windbreak(csv_file, cur)
 
     cur.close()
     con.close()
