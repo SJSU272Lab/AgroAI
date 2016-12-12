@@ -12,6 +12,27 @@ agro.controller('controllerHome',function($scope,$log,$http,$state){
     $scope.yieldUnit = null;
 
 
+    //
+    // $scope.cropAreaChanged = function(){
+    //   console.log("changed");
+    //    if($scope.area == "Other"){
+    //         $('html #areaCrop').after("<label class='form-control'>Enter your area<input class='form-control' placeholder='Enter your area' ng-model='area'></input></label>");
+    //    }
+    //    else{
+    //         $('label').remove();
+    //    }
+    //
+    // };
+
+
+    $scope.irrigationFocus = function() {
+        console.log("irrigationFocus");
+        var element = document.getElementById('irrigation');
+        if(element)
+          element.focus();
+    };
+
+
     //api call for irrigation
     $scope.getIrrigation = function(){
 
@@ -44,6 +65,8 @@ agro.controller('controllerHome',function($scope,$log,$http,$state){
                          viewDistance: 25
                      }
                 },
+                colors: ['#058DC7', '#50B432', '#ED561B', '#DDDF00', '#24CBE5', '#64E572',
+                          '#FF9655', '#FFF263', '#6AF9C4'],
                 title: {
                     text: 'Irrigation for the Year ahead'
                 },
@@ -67,7 +90,7 @@ agro.controller('controllerHome',function($scope,$log,$http,$state){
                     enabled: false
                 },
                 tooltip: {
-                    pointFormat: 'Irrigation for the Year ahead'
+                    pointFormat: 'Irrigation for the Year ahead<b>{point.y:.3f} gallons</b>'
                 },
                 series: [{
                     name: 'Irrigation',
@@ -90,7 +113,7 @@ agro.controller('controllerHome',function($scope,$log,$http,$state){
                         rotation: -90,
                         color: '#FFFFFF',
                         align: 'right',
-                        format: '{point.y:.1f}', // one decimal
+                        format: '{point.y:.3f}', // one decimal
                         y: 10, // 10 pixels down from the top
                         style: {
                             fontSize: '13px',
@@ -99,6 +122,9 @@ agro.controller('controllerHome',function($scope,$log,$http,$state){
                     }
                 }]
             });
+
+            //appyl the theme
+            Highcharts.setOptions(Highcharts.theme);
 
 
     		}).error(function(error) {
@@ -135,6 +161,8 @@ agro.controller('controllerHome',function($scope,$log,$http,$state){
               chart: {
                   type: 'column'
               },
+              colors: ['#f45b5b', '#8085e9', '#8d4654', '#7798BF', '#aaeeee', '#ff0066', '#eeaaee',
+                        '#55BF3B', '#DF5353', '#7798BF', '#aaeeee'],
               title: {
                   text: 'Crop suggestion for your soil type'
               },
@@ -174,10 +202,23 @@ agro.controller('controllerHome',function($scope,$log,$http,$state){
                       [keys[3], values[3]],
                       [keys[4], values[4]]
                   ]
-              }]
+              }],
+              dataLabels: {
+                  enabled: true,
+                  rotation: -90,
+                  color: '#FFFFFF',
+                  align: 'right',
+                  format: '{point.y:.3f}', // one decimal
+                  y: 10, // 10 pixels down from the top
+                  style: {
+                      fontSize: '13px',
+                      fontFamily: 'Verdana, sans-serif'
+                  }
+              }
           });
 
-
+          //appyl the theme
+          Highcharts.setOptions(Highcharts.theme);
 
 
         }).error(function(error) {
@@ -260,7 +301,19 @@ agro.controller('controllerHome',function($scope,$log,$http,$state){
                       [keys[3], values[3]],
                       [keys[4], values[4]]
                   ]
-              }]
+              }],
+              dataLabels: {
+                  enabled: true,
+                  rotation: -90,
+                  color: '#FFFFFF',
+                  align: 'right',
+                  format: '{point.y:.3f}', // one decimal
+                  y: 10, // 10 pixels down from the top
+                  style: {
+                      fontSize: '13px',
+                      fontFamily: 'Verdana, sans-serif'
+                  }
+              }
           });
 
 
@@ -306,6 +359,8 @@ agro.controller('controllerHome',function($scope,$log,$http,$state){
                        viewDistance: 25
                    }
               },
+              colors: ['#7cb5ec', '#f7a35c', '#90ee7e', '#7798BF', '#aaeeee', '#ff0066', '#eeaaee',
+                        '#55BF3B', '#DF5353', '#7798BF', '#aaeeee'],
               title: {
                   text: 'Soil erosion prevention by Planting trees'
               },
@@ -345,11 +400,24 @@ agro.controller('controllerHome',function($scope,$log,$http,$state){
                       [keys[3], values[3]],
                       [keys[4], values[4]]
                   ]
-              }]
+              }],
+              dataLabels: {
+                  enabled: true,
+                  rotation: -90,
+                  color: '#FFFFFF',
+                  align: 'right',
+                  format: '{point.y:.3f}', // one decimal
+                  y: 10, // 10 pixels down from the top
+                  style: {
+                      fontSize: '13px',
+                      fontFamily: 'Verdana, sans-serif'
+                  }
+              }
           });
 
 
-
+          //appyl the theme
+          Highcharts.setOptions(Highcharts.theme);
 
         }).error(function(error) {
           console.log("Internal Server error occurred");

@@ -4,6 +4,7 @@
 
 <div ng-controller="controllerHome">
 
+
     <script src="https://code.highcharts.com/highcharts.js"></script>
     <script src="https://code.highcharts.com/modules/exporting.js"></script>
 
@@ -16,38 +17,14 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand page-scroll" href="#first"><i class="ion-ios-analytics-outline"></i> Landing Zero</a>
-            </div>
-            <div class="navbar-collapse collapse" id="bs-navbar">
-                <ul class="nav navbar-nav">
-                    <li>
-                        <a class="page-scroll" href="#about">Intro</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#services">Highlights</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#team">Gallery</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#portfolio">Features</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#contact">Contact</a>
-                    </li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a class="page-scroll" data-toggle="modal" title="A free Bootstrap video landing theme" href="#aboutModal">About</a>
-                    </li>
-                </ul>
+                  <a class="navbar-brand page-scroll" href="#first"><i class="ion-ios-analytics-outline"></i> Agro AI</a>
             </div>
         </div>
     </nav>
 
 
     <!-- ==== SECTION DIVIDER1 -->
-    <section class="section-divider textdivider divider1">
+    <section class="section-divider textdivider divider1" id="aboutUs">
       <div class="container">
         <form class="form-horizontal" role="form">
           <div class="form-group">
@@ -64,13 +41,13 @@
 
 
       <!-- ==== GREYWRAP ==== -->
-      <div id="greywrap" style="background-image: url('http://wallpapercave.com/wp/Ppd5MGG.jpg');">
-        <div class="container">
-          <h1>Irrigation for the Year ahead</h1>
+      <div id="greywrap" style="background-image: url({{ url_for('static', filename='images/irrigation.jpg')}}); background-size:100%;">
+        <div class="container" id="irrigation">
+          <h1 style="color:white;">Irrigation estimates for the Year ahead</h1>
           <div class="row" style="padding-left: 20%; padding-right: 20%;">
             <div class="col-md-11">
-                <select class="form-control" ng-model="countyname" placeholder="Select a county" style="background-color: inherit !important; color: white;">
-                    <option></option>
+              <label >Select county:</label>
+                <select class="form-control" ng-model="countyname" placeholder="Select a county" style="color: white;">
                     <option>Maricopa County, Arizona, Central Part</option>
                     <option>Fort Defiance Area, Parts of Apache and Navajo Counties, Arizona and McKinley and San Juan Counties, New Mexico</option>
                     <option>Santa Clara Area, California, Western Part</option>
@@ -78,9 +55,9 @@
                     <option>Cherokee County, Texas</option>
                     <option>Duval County, Texas</option>
                 </select><br/>
-                <select class="form-control" ng-model="typeofplant" placeholder="Select type of plant" style="background-color: inherit !important; color: white;">
-                    <option></option>
-                    <option>lawn</option>
+                <label >Type of plant:</label>
+                <select class="form-control" ng-model="typeofplant" placeholder="Select type of plant" style="color: white;">
+                    <option value="lawn">crop</option>
                     <option>shrubs</option>
                 </select>
             </div>
@@ -103,22 +80,23 @@
 
 
     <!-- ==== SECTION DIVIDER6 ==== -->
-    <section class="section-divider textdivider divider6">
+    <section class="section-divider textdivider divider6" id="cropForIrriagted" style="background-image: url({{ url_for('static', filename='images/crops.jpg')}});">
       <div class="container">
-        <h1>Get crop yeild</h1>
+        <h1>Get crop suggestions for irrigated areas</h1>
           <div class="row" style="padding-left: 20%; padding-right: 20%;">
             <div class="col-md-11">
+                <label  style="color:white">Select county:</label>
                 <select class="form-control" ng-model="countynameForCrop" placeholder="Select a county">
-                    <option></option>
                     <option>Santa Clara Area, California, Western Part</option>
                     <option>Western Riverside Area, California</option>
                     <option>Maricopa County, Arizona, Central Part</option>
                     <option>Duval County, Texas</option>
                 </select><br/>
-                <select class="form-control" ng-model="area" placeholder="Select type of plant">
-                    <option></option>
-                    <option>5</option>
-                    <option>10</option>
+                <label style="color:white">Select area(in hectre):</label>
+                <select class="form-control" ng-model="area" placeholder="Select type of plant" id="areaCrop">
+                    <option value="5">less than 5</option>
+                    <option value="10">less than 10</option>
+                    <option value="500">greater than 10</option>
                 </select>
             </div>
             <div class="col-md-1">
@@ -140,21 +118,21 @@
 
 
     <!-- ==== SECTION DIVIDER3 -->
-    <section class="section-divider textdivider divider3">
+    <section class="section-divider textdivider divider3" id="cropForNonIrrigated"  style="background-image: url({{ url_for('static', filename='images/nonIrrigation.jpg')}}); opactity: 0.6">
       <div class="container">
-        <h1>Crop Yield Non Irrigated</h1>
+        <h1>Get crop suggestions for Non Irrigated area</h1>
         <hr>
           <div class="row" style="padding-left: 20%; padding-right: 20%;">
             <div class="col-md-11">
+                <label style="color:white">Select county:</label>
                 <select class="form-control" ng-model="countynameForCropNonIrrigation" placeholder="Select a county">
-                    <option></option>
                     <option>Santa Clara Area, California, Western Part</option>
                     <option>Western Riverside Area, California</option>
                     <option>Maricopa County, Arizona, Central Part</option>
                     <option>Duval County, Texas</option>
                 </select><br/>
+                <label  style="color:white">Type of plant:</label>
                 <select class="form-control" ng-model="areaForCropNonIrrigation" placeholder="Select type of plant">
-                    <option></option>
                     <option>5</option>
                     <option>10</option>
                 </select>
@@ -178,14 +156,14 @@
 
 
 
-    <section class="section-divider textdivider divider3">
+    <section class="section-divider textdivider divider3" id="plantSuggestions" style="background-image: url({{ url_for('static', filename='images/soilErosion.jpg')}}); background-size:100%;">
       <div class="container">
-        <h1>Prevent soil irrigation</h1>
+        <h1>Plant suggestions to prevent soil irrigation</h1>
         <hr>
           <div class="row" style="padding-left: 20%; padding-right: 20%;">
             <div class="col-md-11">
+                <label style="color:white">Select county:</label>
                 <select class="form-control" ng-model="countynameForSoilPrevention" placeholder="Select a county">
-                    <option></option>
                     <option>Santa Clara Area, California, Western Part</option>
                     <option>Western Riverside Area, California</option>
                     <option value="Fort Defiance Area, Parts of Apache and Navajo Counties, Arizona and McKinley and San Juan Counties, New Mexico">
@@ -215,7 +193,7 @@
 
       <div class="row">
       <br>
-        <h1 class="centered">GIVE US DATA FROM YOUR SIDE</h1>
+        <h1 class="centered" style="color:white;">GIVE US DATA FROM YOUR SIDE</h1>
         <br>
         <br>
         <div class="col-lg-4">
@@ -225,7 +203,7 @@
         </div><!-- col -->
 
         <div class="col-lg-4">
-          <h3>Feedback area</h3>
+          <h3 style="color:white;">Fill the following details:</h3>
           <p></p>
           <p>
             <form class="form-horizontal" role="form">
@@ -280,7 +258,7 @@
               <div class="form-group">
 
                                   <div class="g-recaptcha" data-sitekey="6LcRjQ4UAAAAADJYmlqIE65ttck6k3U7F2yltlWY"></div>
-
+                                  <br/><br/>
                 <div class="col-lg-10" style="padding-left: 30%;">
                   <button type="submit" class="btn btn-success" ng-click="submitData()" style="">Submit data</button>
 
@@ -308,38 +286,39 @@
             <br>
             <br>
             <div class="col-lg-3 centered">
-              <img class="img img-circle" src="{{ url_for('static', filename='img/team/team01.jpg')}}" height="120px" width="120px" alt="">
+              <img class="img img-circle" src="{{ url_for('static', filename='images/Ajay.jpeg')}}" height="120px" width="120px" alt="">
               <br>
               <h4><b>Ajay Tanpure</b></h4>
-              <p style="color: black;">Ajay combines an expert technical knowledge with a real eye for design. Working with clients from a wide range of industries, he fully understands client objectives when working on a project, large or small.</p>
             </div><!-- col-lg-3 -->
 
             <div class="col-lg-3 centered">
-              <img class="img img-circle" src="{{ url_for('static', filename='img/team/team02.jpg')}}" height="120px" width="120px" alt="">
+              <img class="img img-circle" src="{{ url_for('static', filename='images/Niranjan.jpeg')}}" height="120px" width="120px" alt="">
               <br>
               <h4><b>Niranjan Tungatkar</b></h4>
-              <p style="color: black;">Niranjan is an experienced marcoms practitioner and manages projects from inception to delivery. He understands the synergy between great design and commercial effectiveness which shines through on every project.</p>
             </div><!-- col-lg-3 -->
 
             <div class="col-lg-3 centered">
-              <img class="img img-circle" src="{{ url_for('static', filename='img/team/team03.jpg')}}" height="120px" width="120px" alt="">
+              <img class="img img-circle" src="{{ url_for('static', filename='images/Rohan.jpeg')}}" height="120px" width="120px" alt="">
               <br>
               <h4><b>Rohan Kankapurkar</b></h4>
-              <p style="color: black;">Be a creative director is a hard task, but Michele loves what she does. Her combination of knowledge and expertise is an important pillar in our agency.</p>
             </div><!-- col-lg-3 -->
 
             <div class="col-lg-3 centered">
-              <img class="img img-circle" src="{{ url_for('static', filename='img/team/team04.jpg')}}" height="120px" width="120px" alt="">
+              <img class="img img-circle" src="{{ url_for('static', filename='images/Darshan.jpeg')}}" height="120px" width="120px" alt="">
               <br>
               <h4><b>Darshan Sapaliga</b></h4>
-              <p style="color: black;">Darshan began making websites when animated logos and scrolling text were cool, but has since found a love for simplicity, creating websites that are a pleasure to browse. Monkey Island Fan.</p>
             </div><!-- col-lg-3 -->
 
           </div><!-- row -->
+          <div class="container">
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+          </div>
         </div><!-- container -->
       </div>
-
-
 
 </div>
     </html>
