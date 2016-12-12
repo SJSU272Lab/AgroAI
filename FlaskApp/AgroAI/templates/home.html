@@ -1,9 +1,8 @@
 
-<script src='https://www.google.com/recaptcha/api.js'></script>
-
 <div ng-controller="controllerHome">
 
-    <script src='https://www.google.com/recaptcha/api.js'></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
 
     <nav id="topNav" class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
@@ -58,174 +57,161 @@
     </section><!-- section -->
 
 
-    <!-- ==== PORTFOLIO ==== -->
-    <div class="container" id="portfolio" name="portfolio">
-    <br>
-      <div class="row">
+
+
+
+      <!-- ==== GREYWRAP ==== -->
+      <div id="greywrap" style="background-image: url('http://wallpapercave.com/wp/Ppd5MGG.jpg');">
+        <div class="container">
+          <h1>Irrigation for the Year ahead</h1>
+          <div class="row" style="padding-left: 20%; padding-right: 20%;">
+            <div class="col-md-11">
+                <select class="form-control" ng-model="countyname" placeholder="Select a county" style="background-color: inherit !important; color: white;">
+                    <option></option>
+                    <option>Maricopa County, Arizona, Central Part</option>
+                    <option>Fort Defiance Area, Parts of Apache and Navajo Counties, Arizona and McKinley and San Juan Counties, New Mexico</option>
+                    <option>Santa Clara Area, California, Western Part</option>
+                    <option>Western Riverside Area, California</option>
+                    <option>Cherokee County, Texas</option>
+                    <option>Duval County, Texas</option>
+                </select><br/>
+                <select class="form-control" ng-model="typeofplant" placeholder="Select type of plant" style="background-color: inherit !important; color: white;">
+                    <option></option>
+                    <option>lawn</option>
+                    <option>shrubs</option>
+                </select>
+            </div>
+            <div class="col-md-1">
+
+            </div>
+        <!-- </div> -->
+          </div><!-- row -->
+          <br>
+          <br>
+          <button class="btn btn-success" ng-click="getIrrigation()">Get Results</button>
+          <br>
+          <br>
+          <div id="modelIrrigation" ng-model="modelIrrigation" style="min-width: 300px; height: 400px; margin: 0 auto"></div>
+        </div>
         <br>
-        <h1 class="centered">Examples</h1>
-        <hr>
         <br>
-        <br>
-      </div><!-- /row -->
-      <div class="container">
-          <div class="row">
-
-            <!-- PORTFOLIO IMAGE 1 -->
-            <div class="col-md-4 " style="height: 800px; max-height: 800px;">
-                <div class="grid mask" style="height: 100%">
-                <figure>
-                  <img class="img-responsive" src="{{ url_for('static', filename='images/irrigation.jpg')}}" alt="" style="height: 100%; :hover: blur(5px);">
-                  <figcaption>
-                    <h5>IRRIGATION</h5>
-                    <a data-toggle="modal" href="#myModal" class="btn btn-primary btn-lg">Take a Look</a>
-                  </figcaption><!-- /figcaption -->
-                </figure><!-- /figure -->
-                </div><!-- /grid-mask -->
-            </div><!-- /col -->
-
-
-                 <!-- MODAL SHOW THE PORTFOLIO IMAGE. In this demo, all links point to this modal. You should create
-                      a modal for each of your projects. -->
-
-                  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                          <h4 class="modal-title">IRRIGATION</h4>
-                        </div>
-                        <div class="modal-body">
-                          <div>
-                              <!-- <div class="row"> -->
-                                  <div class="col-md-9">
-                                      <select class="form-control" ng-model="countyname" placeholder="" style="background-color: inherit !important; color: white;">
-                                          <option></option>
-                                          <option>Maricopa County, Arizona, Central Part</option>
-                                          <option>Fort Defiance Area, Parts of Apache and Navajo Counties, Arizona and McKinley and San Juan Counties, New Mexico</option>
-                                          <option>Santa Clara Area, California, Western Part</option>
-                                          <option>Western Riverside Area, California</option>
-                                          <option>Cherokee County, Texas</option>
-                                          <option>Duval County, Texas</option>
-                                      </select>
-                                      <select class="form-control" ng-model="typeofplant" style="background-color: inherit !important; color: white;">
-                                          <option></option>
-                                          <option>lawn</option>
-                                          <option>shrubs</option>
-                                      </select>
-                                  </div>
-                                  <div class="col-md-3">
-                                      <button class="btn btn-success" ng-click="getIrrigation()">Get Results</button>
-                                  </div>
-                              <!-- </div> -->
-                            <br />
-                          </div>
-                          <div>
-                              <h2> For chart </h2>
-                          </div>
-                        </div>
-                        <div class="modal-footer">
-                          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        </div>
-                      </div><!-- /.modal-content -->
-                    </div><!-- /.modal-dialog -->
-                  </div><!-- /.modal -->
-
-
-            <!-- PORTFOLIO IMAGE 2 -->
-            <div class="col-md-4">
-                <div class="grid mask">
-                <figure>
-                  <img class="img-responsive" src="{{ url_for('static', filename='img/portfolio/folio02.jpg')}}" alt="">
-                  <figcaption>
-                    <h5>UI DESIGN</h5>
-                    <a data-toggle="modal" href="#myModal" class="btn btn-primary btn-lg">Take a Look</a>
-                  </figcaption><!-- /figcaption -->
-                </figure><!-- /figure -->
-                </div><!-- /grid-mask -->
-            </div><!-- /col -->
-
-                <!-- MODAL SHOW THE PORTFOLIO IMAGE. In this demo, all links point to this modal. You should create
-                     a modal for each of your projects. -->
-
-                 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                   <div class="modal-dialog">
-                     <div class="modal-content">
-                       <div class="modal-header">
-                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                         <h4 class="modal-title">Project Title</h4>
-                       </div>
-                       <div class="modal-body">
-                         <p><img class="img-responsive" src="{{ url_for('static', filename='img/portfolio/folio01.jpg')}}" alt=""></p>
-                         <p>This project was crafted for Some Name corp. Detail here a little about your job requirements and the tools used. Tell about the challenges faced and what you and your team did to solve it.</p>
-                         <p><b><a href="#">Visit Site</a></b></p>
-                       </div>
-                       <div class="modal-footer">
-                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                       </div>
-                     </div><!-- /.modal-content -->
-                   </div><!-- /.modal-dialog -->
-                 </div><!-- /.modal -->
-
-            <!-- PORTFOLIO IMAGE 3 -->
-            <div class="col-md-4">
-                <div class="grid mask">
-                <figure>
-                  <img class="img-responsive" src="{{ url_for('static', filename='img/portfolio/folio03.jpg')}}" alt="">
-                  <figcaption>
-                    <h5>ANDROID PAGE</h5>
-                    <a data-toggle="modal" href="#myModal" class="btn btn-primary btn-lg">Take a Look</a>
-                  </figcaption><!-- /figcaption -->
-                </figure><!-- /figure -->
-                </div><!-- /grid-mask -->
-            </div><!-- /col -->
-          </div><!-- /row -->
-
-          <!-- MODAL SHOW THE PORTFOLIO IMAGE. In this demo, all links point to this modal. You should create
-               a modal for each of your projects. -->
-
-           <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-             <div class="modal-dialog">
-               <div class="modal-content">
-                 <div class="modal-header">
-                   <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                   <h4 class="modal-title">Project Title</h4>
-                 </div>
-                 <div class="modal-body">
-                   <p><img class="img-responsive" src="{{ url_for('static', filename='img/portfolio/folio01.jpg')}}" alt=""></p>
-                   <p>This project was crafted for Some Name corp. Detail here a little about your job requirements and the tools used. Tell about the challenges faced and what you and your team did to solve it.</p>
-                   <p><b><a href="#">Visit Site</a></b></p>
-                 </div>
-                 <div class="modal-footer">
-                   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                 </div>
-               </div><!-- /.modal-content -->
-             </div><!-- /.modal-dialog -->
-           </div><!-- /.modal -->
-
-      </div><!-- /row -->
-      <br>
-      <br>
-    </div><!-- /row -->
-    </div><!-- /container -->
+      </div><!-- greywrap -->
 
 
 
     <!-- ==== SECTION DIVIDER6 ==== -->
     <section class="section-divider textdivider divider6">
       <div class="container">
-        <h1>Extra field</h1>
-        <hr>
-        <p></p>
-        <p></p>
-        <p><a class="icon icon-twitter" href="#"></a> | <a class="icon icon-facebook" href="#"></a></p>
+        <h1>Get crop yeild</h1>
+          <div class="row" style="padding-left: 20%; padding-right: 20%;">
+            <div class="col-md-11">
+                <select class="form-control" ng-model="countynameForCrop" placeholder="Select a county">
+                    <option></option>
+                    <option>Santa Clara Area, California, Western Part</option>
+                    <option>Western Riverside Area, California</option>
+                    <option>Maricopa County, Arizona, Central Part</option>
+                    <option>Duval County, Texas</option>
+                </select><br/>
+                <select class="form-control" ng-model="area" placeholder="Select type of plant">
+                    <option></option>
+                    <option>5</option>
+                    <option>10</option>
+                </select>
+            </div>
+            <div class="col-md-1">
+
+            </div>
+        <!-- </div> -->
+          </div><!-- row -->
+          <br>
+          <br>
+          <button class="btn btn-success" ng-click="getCropYield()">Get Results</button>
+          <br>
+          <br>
+          <div id="modelCropYeild" ng-model="modelCropYeild" style="min-width: 300px; height: 400px; margin: 0 auto"></div>
+        <br>
+        <br>
       </div><!-- container -->
     </section><!-- section -->
+
+
+
+    <!-- ==== SECTION DIVIDER3 -->
+    <section class="section-divider textdivider divider3">
+      <div class="container">
+        <h1>Crop Yield Non Irrigated</h1>
+        <hr>
+          <div class="row" style="padding-left: 20%; padding-right: 20%;">
+            <div class="col-md-11">
+                <select class="form-control" ng-model="countynameForCropNonIrrigation" placeholder="Select a county">
+                    <option></option>
+                    <option>Santa Clara Area, California, Western Part</option>
+                    <option>Western Riverside Area, California</option>
+                    <option>Maricopa County, Arizona, Central Part</option>
+                    <option>Duval County, Texas</option>
+                </select><br/>
+                <select class="form-control" ng-model="areaForCropNonIrrigation" placeholder="Select type of plant">
+                    <option></option>
+                    <option>5</option>
+                    <option>10</option>
+                </select>
+            </div>
+            <div class="col-md-1">
+
+            </div>
+        <!-- </div> -->
+          </div><!-- row -->
+          <br>
+          <br>
+          <button class="btn btn-success" ng-click="cropNonIrrigated()">Get Results</button>
+          <br>
+          <br>
+          <div id="modelCropYeildNonIrrigation" ng-model="modelCropYeildNonIrrigation" style="min-width: 300px; height: 400px; margin: 0 auto"></div>
+          <br>
+          <br>
+      </div><!-- container -->
+    </section><!-- section -->
+
+
+
+
+    <section class="section-divider textdivider divider3">
+      <div class="container">
+        <h1>Prevent soil irrigation</h1>
+        <hr>
+          <div class="row" style="padding-left: 20%; padding-right: 20%;">
+            <div class="col-md-11">
+                <select class="form-control" ng-model="countynameForSoilPrevention" placeholder="Select a county">
+                    <option></option>
+                    <option>Santa Clara Area, California, Western Part</option>
+                    <option>Western Riverside Area, California</option>
+                    <option value="Fort Defiance Area, Parts of Apache and Navajo Counties, Arizona and McKinley and San Juan Counties, New Mexico">
+                      Fort Defiance Area, Parts of Apache and Navajo Counties
+                    </option>
+                </select><br/>
+            </div>
+            <div class="col-md-1">
+
+            </div>
+        <!-- </div> -->
+          </div><!-- row -->
+          <br>
+          <br>
+          <button class="btn btn-success" ng-click="soilErrosionPrevention()">Get Results</button>
+          <br>
+          <br>
+          <div id="modelSoilErosion" ng-model="modelSoilErosion" style="min-width: 300px; height: 400px; margin: 0 auto"></div>
+          <br>
+          <br>
+      </div><!-- container -->
+    </section><!-- section -->
+
+
 
     <div class="container" id="contact" name="contact">
       <div class="row">
       <br>
-        <h1 class="centered">GIVE US FEEDBACK FROM YOUR SIDE</h1>
+        <h1 class="centered">GIVE US DATA FROM YOUR SIDE</h1>
         <br>
         <br>
         <div class="col-lg-4">
@@ -242,31 +228,59 @@
               <div class="form-group">
                 <label for="inputEmail1" class="col-lg-4 control-label"></label>
                 <div class="col-lg-10">
-                  <input type="email" class="form-control" id="inputEmail1" placeholder="Email">
+                  <input type="email" class="form-control" id="state" placeholder="State" ng-model="state">
                 </div>
               </div>
               <div class="form-group">
-                <label for="text1" class="col-lg-4 control-label"></label>
+                <label for="inputEmail1" class="col-lg-4 control-label"></label>
                 <div class="col-lg-10">
-                  <input type="text" class="form-control" id="text1" placeholder="Your Name">
+                  <input type="email" class="form-control" id="county" placeholder="County" ng-model="county">
                 </div>
               </div>
-
-              <!-- captcha area -->
               <div class="form-group">
+                <label for="inputEmail1" class="col-lg-4 control-label"></label>
                 <div class="col-lg-10">
-                  <h1> hi </h1>
-                  <div class="g-recaptcha" data-sitekey="6LfGeg4UAAAAAFKL2WJO3cvDraPlSi-tEVbSOyGE"></div>
+                  <input type="email" class="form-control" id="crop" placeholder="Which crop you took" ng-model="crop">
                 </div>
               </div>
-
               <div class="form-group">
+                <label for="inputEmail1" class="col-lg-4 control-label"></label>
                 <div class="col-lg-10">
-                  <button type="submit" class="btn btn-success">Sign in</button>
+                  <input type="Number" class="form-control" id="yield" placeholder="Yield" ng-model="yield">
+                  <label for="inputEmail1" class="control-label">Yield Unit:</label>
+                  <select placeholder="select tons or crates" class="form-control" ng-model="yieldUnit">
+                      <option>tons</option>
+                      <option>crates</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="inputEmail1" class="col-lg-4 control-label"></label>
+                <div class="col-lg-10">
+                  <input type="Number" class="form-control" id="irrigation" placeholder="Irrigation" ng-model="irrigation">
+                  <label for="inputEmail1" class="control-label">Irrigation area:</label>
+                  <select placeholder="Choose area" class="form-control" ng-model="irrigationArea">
+                      <option>per square feet</option>
+                      <option>per square meter</option>
+                  </select>
+                  <label for="inputEmail1" class="control-label">Irrigation Frequency:</label>
+                  <select placeholder="Select a frequency" class="form-control" ng-model="irrigationFrequency">
+                      <option>daily</option>
+                      <option>weekly</option>
+                      <option>monthly</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-lg-10" style="padding-left: 30%;">
+                  <button type="submit" class="btn btn-success" ng-click="submitData()" style="">Submit data</button>
                 </div>
                 <div class="g-recaptcha" data-sitekey="6LdAeQ4UAAAAAOQ1H744E23aDCEBPiRltnMY03eG"></div>
                 <div class="g-recaptcha" data-sitekey="6LfGeg4UAAAAAFKL2WJO3cvDraPlSi-tEVbSOyGE"></div>
               </div>
+              <br/>
+              <br/>
+              <br/>
              </form><!-- form -->
           </p>
         </div><!-- col -->
@@ -314,6 +328,7 @@
           </div><!-- row -->
         </div><!-- container -->
       </div>
+
 
 
 </div>
