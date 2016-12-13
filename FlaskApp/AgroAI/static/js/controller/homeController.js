@@ -189,7 +189,7 @@ agro.controller('controllerHome',function($scope,$log,$http,$state){
               yAxis: {
                   min: 0,
                   title: {
-                      text: 'Crop Yield (kg per hectare)'
+                      text: 'Crop Yield (kg per acre)'
                   }
               },
               legend: {
@@ -293,7 +293,7 @@ agro.controller('controllerHome',function($scope,$log,$http,$state){
               yAxis: {
                   min: 0,
                   title: {
-                      text: 'Crop Yield (kg per hectare)'
+                      text: 'Crop Yield (kg per acre)'
                   }
               },
               legend: {
