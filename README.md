@@ -1,5 +1,7 @@
 # Fall16-Team20
 
+#Website URL : https://agroaicorp.mybluemix.net
+
 
 #Project name : AgroAI#
 
@@ -7,7 +9,14 @@ Problem: Every year crop yield suffers due to lack of knowledge on the soil bein
 
 
 
-Solution: We will use data analytics and machine learning models for determining soil health data. We intend to use data from various soil surveys and then develop Machine Learning models which will answer different questions from farmers answers to which would provide some recommendations aiding the farmer to make well-informed decisions. A database is maintained which has cumulative data from different surveys on which machine learning algorithms are executed. The output/models generated from the algorithms on the cumulative data is sorted and stored in the database. The user sends a query form the system UI for example - sends data rainfall amount and based on this the user requires the rainfall effect on the soil salinity in his farm. The recommendation is based on the generated machine learning models. 
+Solution: We use data analytics and machine learning models for determining soil health. 
+We intend to use data from various soil surveys and then develop Machine Learning models which will answer different questions from farmers. 
+We intend to provide recommendations aiding the farmer to make well-informed decisions. 
+A database is maintained which has cumulative data from different surveys on which machine learning algorithms are executed. 
+The system currently provides recommendations for the following -
+Irrigation needs of the farmer.
+Best suited crops for a particular area [Irrigated/Non-Irrigated Area]
+Which crops to plant to prevent soil erosion happening due to strong winds.
 
 Main focus would be generating accurate models and providing useful recommendations.
 
