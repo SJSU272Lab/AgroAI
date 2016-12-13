@@ -153,7 +153,12 @@ agro.controller('controllerHome',function($scope,$log,$http,$state){
           console.log(Object.values(data));
 
           var keys = Object.keys(data),
-              values = Object.values(data);
+              oldValues = Object.values(data),
+              values = [];
+
+          for(var i=0; i<oldValues.length; i++) {
+            values.push(oldValues[i]/5);
+          }
 
 
 
@@ -184,14 +189,14 @@ agro.controller('controllerHome',function($scope,$log,$http,$state){
               yAxis: {
                   min: 0,
                   title: {
-                      text: 'Crop Yield (tons OR crates per hectre)'
+                      text: 'Crop Yield (kg per hectare)'
                   }
               },
               legend: {
                   enabled: false
               },
               tooltip: {
-                  pointFormat: 'Crop suggestion <b>{point.y:.3f} gallons</b>',
+                  pointFormat: 'Crop suggestionin - <b>{point.y:.2f} kg</b>'
               },
               series: [{
                   name: 'Crop yield',
@@ -247,7 +252,12 @@ agro.controller('controllerHome',function($scope,$log,$http,$state){
           console.log(Object.values(data));
 
           var keys = Object.keys(data),
-              values = Object.values(data);
+              oldValues = Object.values(data),
+              values = [];
+
+          for(var i=0; i<oldValues.length; i++) {
+            values.push(oldValues[i]/5);
+          }
 
 
 
@@ -283,14 +293,14 @@ agro.controller('controllerHome',function($scope,$log,$http,$state){
               yAxis: {
                   min: 0,
                   title: {
-                      text: 'Crop Yield (tons OR crates per hectre)'
+                      text: 'Crop Yield (kg per hectare)'
                   }
               },
               legend: {
                   enabled: false
               },
               tooltip: {
-                  pointFormat: 'Crop suggestion for your soil type - Non Irrigated mode'
+                  pointFormat: 'Crop suggestion - <b>{point.y:.2f} kg</b>'
               },
               series: [{
                   name: 'Crop yield - Non Irrigated mode',
@@ -440,73 +450,68 @@ agro.controller('controllerHome',function($scope,$log,$http,$state){
                     $scope.irrigationFrequency
                   );
 
-	    var captchaResponse = grecaptcha.getResponse();
-	    if(captchaResponse != "" && captchaResponse != undefined && captchaResponse != null)
-        {
-            $http({
-			    method : "POST",
-			    url : 'https://www.google.com/recaptcha/api/siteverify',
-			    data : {
-				    "secret" : "6LcRjQ4UAAAAAI0AssSLOG_ee9tZeLMO6rVA-CBc",
-                    "response" : captchaResponse
+              console.log("------after captcha------");
+              //submitting the form
+              $http({
+                  method: "POST",
+                  url: '/userdata',
+                  data: {
+                      state: $scope.state,
+                      county: $scope.county,
+                      crop: $scope.crop,
+                      yield: $scope.yield,
+                      yieldUnit: $scope.yieldUnit,
+                      irrigation: $scope.irrigation,
+                      irrigationArea: $scope.irrigationArea,
+                      irrigationFrequency: $scope.irrigationFrequency
+                  }
+              }).success(function (data) {
 
-			    }
-            }).success(function(data) {
+                  console.log("-----soilErrosionPrevention-----");
+                  console.log(data);
 
-                if(data.success == true) {
-                    $http({
-                        method: "POST",
-                        url: '/userdata',
-                        data: {
-                            state: $scope.state,
-                            county: $scope.county,
-                            crop: $scope.crop,
-                            yield: $scope.yield,
-                            yieldUnit: $scope.yieldUnit,
-                            irrigation: $scope.irrigation,
-                            irrigationArea: $scope.irrigationArea,
-                            irrigationFrequency: $scope.irrigationFrequency
+                  if (data) {
+                      $scope.successMsg = true;
+                      $scope.state = "";
+                      $scope.county = "";
+                      $scope.crop = "";
+                      $scope.yield = "";
+                      $scope.yieldUnit = "";
+                      $scope.irrigation  = "";
+                      $scope.irrigationArea = "";
+                      $scope.irrigationFrequency = "";
+                      alert("Thank you for your input. Your data is submitted successfully");
+                    }
+                  else
+                      alert("Thank you for your input. Your data is submitted successfully");
+
+
+                      var captchaResponse = grecaptcha.getResponse();
+                      if(captchaResponse != "" && captchaResponse != undefined && captchaResponse != null)
+                        {
+                            $http({
+                      			    method : "POST",
+                      			    url : 'https://www.google.com/recaptcha/api/siteverify',
+                      			    data : {
+                      				    "secret" : "6LcRjQ4UAAAAAI0AssSLOG_ee9tZeLMO6rVA-CBc",
+                                          "response" : captchaResponse
+
+                      			    }
+                              }).success(function(data) {
+
+                                      console.log(data.success);
+                          		}).error(function(error) {
+                      			    console.log("Error")
+
+                      		    });
                         }
-                    }).success(function (data) {
-
-                        console.log("-----soilErrosionPrevention-----");
-                        console.log(data);
-
-                        if (data) {
-                            $scope.successMsg = true;
-                            $scope.state = "";
-                            $scope.county = "";
-                            $scope.crop = "";
-                            $scope.yield = "";
-                            $scope.yieldUnit = "";
-                            $scope.irrigation  = "";
-                            $scope.irrigationArea = "";
-                            $scope.irrigationFrequency = "";
-                            alert("Thank you for your input. Your data is submitted successfully");
-                          }
-                        else
-                            alert("Thank you for your input. Your data is submitted successfully");
-
-
-                    }).error(function (error) {
-                        console.log("Internal Server error occurred");
-                        $scope.submitDataError = true;
-                    });
-                }else{
-
-                }
-
-                console.log(data.success);
-    		}).error(function(error) {
-			    console.log("Error")
-
-		    });
-
-        }
 
 
 
-
+              }).error(function (error) {
+                  console.log("Internal Server error occurred");
+                  $scope.submitDataError = true;
+              });
 
 
 

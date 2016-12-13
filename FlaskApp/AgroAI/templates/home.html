@@ -27,8 +27,8 @@
 
 
       <!-- ==== GREYWRAP ==== -->
-      <div id="greywrap" style="background-image: url({{ url_for('static', filename='images/irrigation.jpg')}}); background-size:100%;">
-        <div class="container" id="irrigation">
+      <div class="section-divider textdivider divider3" id="cropForNonIrrigated" style="background-image: url({{ url_for('static', filename='images/graphics.jpg')}});">
+        <div id="irrigation" class="container">
           <h1 style="color:white;">Irrigation estimates for the Year ahead</h1>
           <div class="row" style="padding-left: 20%; padding-right: 20%;">
             <div class="col-md-11">
@@ -78,7 +78,7 @@
                     <option>Maricopa County, Arizona, Central Part</option>
                     <option>Duval County, Texas</option>
                 </select><br/>
-                <label style="color:white">Select area(in hectre):</label>
+                <label style="color:white">Select area(in hectare):</label>
                 <select class="form-control" ng-model="area" placeholder="Select type of plant" id="areaCrop">
                     <option value="5">less than 5</option>
                     <option value="10">less than 10</option>
@@ -142,7 +142,7 @@
 
 
 
-    <section class="section-divider textdivider divider3" id="plantSuggestions" style="background-image: url({{ url_for('static', filename='images/soilErosion.jpg')}}); background-size:100%;">
+    <section class="section-divider textdivider divider3" id="plantSuggestions" style="background-image: url({{ url_for('static', filename='images/graphics.jpg')}});">
       <div class="container">
         <h1>Plant suggestions to prevent soil erosion</h1>
         <hr>
