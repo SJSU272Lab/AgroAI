@@ -27,8 +27,8 @@ Solution:
 ![alt Architecture diagram]( /Project_AgroAI_docs/272_Project.png?raw=true "Architecture Diagram")
 
 
-Contact Info:
-Ajay Tanpure        :ajay.tanpure@sjsu.edu
-Darshan Sapaliga    :darshanvaman.sapaliga@sjsu.edu
-Niranjan Tungatkar  :niranjananil.tungatkar@sjsu.edu
-Rohan Kankapurkar   :rohan.kankapurkar@sjsu.edu
+Contact Info:  
+Ajay Tanpure        :ajay.tanpure@sjsu.edu  
+Darshan Sapaliga    :darshanvaman.sapaliga@sjsu.edu  
+Niranjan Tungatkar  :niranjananil.tungatkar@sjsu.edu  
+Rohan Kankapurkar   :rohan.kankapurkar@sjsu.edu  
