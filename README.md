@@ -28,4 +28,7 @@ Solution:
 
 
 Contact Info:
-Ajay Tanpure
+Ajay Tanpure        :ajay.tanpure@sjsu.edu
+Darshan Sapaliga    :darshanvaman.sapaliga@sjsu.edu
+Niranjan Tungatkar  :niranjananil.tungatkar@sjsu.edu
+Rohan Kankapurkar   :rohan.kankapurkar@sjsu.edu
